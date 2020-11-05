@@ -1,0 +1,242 @@
+@font-face {
+    font-family: "Flamante-medium";
+    src: url('fontes/Flamante-SemiSlab-Medium-FFP2.ttf')
+}
+                                                                    
+@font-face {
+    font-family: "Flamante-bold";
+    src: url('fontes/Flamante-SemiSlab-Bold-FFP.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#logo {
+    grid-area: logo;
+}
+
+#menu {
+    grid-area: menu;
+}
+
+#toggle {
+    grid-area: toggle;
+}
+
+.social {
+    grid-area: social;
+}
+
+.contatos {
+    grid-area: contatos;
+}
+
+#nav-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+
+#nav-btn>div {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin: 5px 0px;
+    transition: all 0.4s linear;
+}
+
+#nav-btn:hover div {
+    background-color: #142e2a;
+}
+
+#nav-slide {
+    position: fixed;
+    right: -100vw;
+    top: 60px;
+    width: 100vw;
+    height: 0px;
+    background-color: #57978f;
+    transition: right 0.4s linear;
+}
+
+#toggle {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.cabecalho {
+    background-color: #57978f;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.rodape {
+    background-color: #57978f;
+    bottom: 0;
+}
+
+.hd {
+    font-size: 20px;
+    color: white;
+    font-family: 'Flamante-bold';
+    background-color: #57978f;
+}
+
+.contatos a {
+    text-decoration: none;
+    justify-self: center;
+    color: white;
+    transition: all 0.4s linear;
+}
+
+.contatos {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-content: space-around;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.social {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: space-around;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.social-filho {
+    display: flex;
+    align-content: flex-start;
+}
+
+.social-filho a:hover {
+    opacity: 0.3;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+#menu a:hover, .contatos a:hover {
+    color: #142e2a;
+}
+
+#menu a {
+    font-family: 'Flamante-medium';
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    border-left: solid #6fd8ced5 1px;
+    transition: all 0.4s linear;
+}
+
+#nav-slide {
+    padding-top: 20vh;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 10vh 10vh 10vh 10vh;
+}
+
+#nav-slide a {
+    font-family: 'Flamante-medium';
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    transition: all 0.4s linear;
+}
+
+#nav-slide a:hover {
+    color: #142e2a;
+}
+
+#menu a:nth-child(1) {
+    border: none;
+}
+
+#logo img {
+    height: 60px;
+}
+
+#logo:hover {
+    opacity: 0.7;
+}
+
+h1 {
+    color: #57978f;
+    background-color: #c8e6e2;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Flamante-medium';
+    display: block;
+}
+h2 {
+    color: #57978f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: block;
+    font-size: 30px;
+    padding-top: 0px;
+    display: block;
+}
+
+
+@media only screen and (min-width: 901px) {
+    .cabecalho {
+        grid-template-areas: 'logo menu';
+    }
+    #toggle {
+        display: none;
+    }
+    #nav-slide {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .cabecalho {
+        grid-template-areas: 'logo toggle';
+    }
+    #menu {
+        display: none;
+    }
+    header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .rodape {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'social' 'contatos';
+    }
+}
+
+@media only screen and (min-width: 481px) {
+    .rodape {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        grid-template-areas: 'social contatos';
+    }
+
+    .contatos {
+        padding-right: 5vw;
+    }
+
+    .social {
+        padding-left: 5vw;
+    }
+}

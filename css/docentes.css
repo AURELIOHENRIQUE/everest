@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.cabecalho { grid-area: cabecalho; }
+.corpo { grid-area: corpo; }
+.rodape { grid-area: rodape; }
+.titulo { grid-area: titulo; }
+.disc { grid-area: disc; }
+.linha { grid-area: linha; }
+.prof { grid-area: prof; }
+
+#i1 { grid-area: i1;}
+#i2 { grid-area: i2;}
+#i3 { grid-area: i3;}
+#i4 { grid-area: i4;}
+#i5 { grid-area: i5;}
+#i6 { grid-area: i6;}
+#i7 { grid-area: i7;}
+#i8 { grid-area: i8;}
+#i9 { grid-area: i9;}
+
+#j1 { grid-area: j1;}
+#j2 { grid-area: j2;}
+#j3 { grid-area: j3;}
+#j4 { grid-area: j4;}
+#j5 { grid-area: j5;}
+
+#ch-m { grid-area: ch-m;}
+#cn-m { grid-area: cn-m;}
+#lc-m { grid-area: lc-m;}
+#rc-m { grid-area: rc-m;}
+#ma-m { grid-area: ma-m;}
+
+.linha{
+    grid-area: linha;
+    display: flex;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    justify-content: center;
+    width: 1px;
+    height: 90%;
+    background-color: #32bca8;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+.img-prof img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media only screen and (min-width: 901px) {
+    body {
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+
+    .corpo {
+        display: grid;
+        grid-template-columns: 45vw auto 45vw;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'titulo titulo titulo' 'disc linha prof';
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .prof {
+        margin: 1vw;
+        margin-right: 2vw;
+        grid-gap: 1vw;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 'i1 i2' 'i3 i4' 'i5 i6' 'i7 i8' 'i9 i9';
+        justify-content: space-around;
+        align-content: space-around;
+    }
+
+    .img-prof img {
+        border: solid #32bca8;
+        border-width: 3px; 
+    }
+
+    .disc-filho ul {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        list-style: none;
+        text-indent: 15px;
+    }
+
+    .disc-filho h2 {
+        margin-bottom: 10px;
+    }
+
+    .disc-filho li {
+        list-style: circle;
+    }
+
+    .disc {
+        margin: 1vw;
+        margin-left: 2vw;
+        grid-gap: 1vw;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 'cn' 'ch' 'lc' 'rc' 'ma';
+    }
+
+    .corpo-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .corpo {
+        display: none;
+    }
+    body {
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+
+    .corpo-mobile {
+        grid-gap: 5vw 10vw;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+        grid-template-areas: 
+        'titulo'
+        'j1' 
+        'cn-m' 
+        'j2' 
+        'ch-m' 
+        'j3' 
+        'lc-m' 
+        'j4' 
+        'rc-m' 
+        'j5' 
+        'ma-m';
+        justify-content: space-between;
+        align-content: space-between;
+    }
+    #ma-m {
+        margin-bottom: 3vh;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .disc-filho {
+        padding: 15px;
+        width: 80%;
+        background-color: #c8e6e2;
+        margin: auto;
+        border: solid 1px #57978f;
+    }
+
+    .disc-filho h2 {
+        font-size: 20px;
+    }
+
+    .disc-filho ul {
+        font-size: 14px;
+        text-indent: 20px;
+    }
+
+    .corpo-mobile img{
+        width: calc(100% - 6px);
+        border-radius: 10px;
+        border: solid #32bca8;
+        border-width: 3px; 
+    }
+
+
+    .corpo-mobile div{
+        font-family: Arial, Helvetica, sans-serif;
+        color: #123f38;
+    }
+    
+}
+
+/*destaque*/
+#menu a:nth-child(3) {
+    color: #142e2a;
+}

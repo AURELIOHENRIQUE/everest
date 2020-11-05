@@ -1,0 +1,112 @@
+.cabecalho {
+    grid-area: cabecalho;
+}
+
+.corpo {
+    grid-area: corpo;
+}
+
+.rodape {
+    grid-area: rodape;
+}
+
+#fundo {
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+}
+
+#fundo-mobile {
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+}
+
+#fundo-mobile img {
+    height: 100%;
+}
+
+#fundo img {
+    width: 100%;
+}
+
+.slogan, .desc{
+    font-family: 'Flamante-medium';
+    color: white;
+    background-color: #57978f41;
+    margin: auto 30px auto auto;
+    padding: 10px 30px;
+    font-size: 30px;
+    text-align: center;
+    width: 40%;
+    border-radius: 20px;
+    border-style: dashed;
+}
+
+.slogan h1 {
+    font-family: 'Flamante-medium';
+    color: white;
+    background-color: #57978f00;
+}
+
+.desc{
+    border: none;
+    text-align: center;
+    padding: 0 35px;
+    margin-top: 30px;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+@media only screen and (min-width: 901px) {
+    body {
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+    #fundo-mobile {
+        display: none;
+    }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    body {
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+
+    #fundo {
+        display: none;
+    }
+    .slogan, .desc{
+        font-family: 'Flamante-medium';
+        color: white;
+        background-color: #57978f62;
+        margin: auto;
+        padding: 0 15px;
+        font-size: 20px;
+        text-align: center;
+        width: 50%;
+        border-radius: 20px;
+        border-style: dashed;
+    }
+
+    .slogan h1 {
+        font-family: 'Flamante-medium';
+        color: white;
+        background-color: #57978f00;
+    }
+    
+    .desc{
+        border: none;
+        text-align: center;
+        padding: 0 35px;
+        margin-top: 30px;
+    }
+}

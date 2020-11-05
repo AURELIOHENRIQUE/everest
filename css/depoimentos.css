@@ -1,0 +1,139 @@
+.cabecalho {
+    grid-area: cabecalho;
+}
+
+.corpo {
+    grid-area: corpo;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.dep {
+    margin: .8vw;
+    background-color: #57978fd5;
+    color: whitesmoke;
+    border-radius: 5%;
+    text-align: center;
+    padding: 2vw;
+    transition: all 0.4s linear;
+}
+
+.fala {
+    text-align: justify;
+    margin-left: 3px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.before {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.aspa::before {
+    content: '“';
+    font-size: 8em;
+    color: whitesmoke;
+    line-height: 1;
+    height: 1em;
+    left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    float: left;
+}
+
+.autor {
+    text-align: right;
+    color: rgba(25, 85, 85, 0.733);
+    font-size: 1.2em;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.dep img {
+    width: 70%;
+    border-radius: 5%;
+}
+
+.dep:hover {
+    background-color: #416965d5;
+}
+
+.dep:hover .autor {
+    color: whitesmoke;
+}
+
+
+.rodape {
+    grid-area: rodape;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+/*destaque*/
+#menu a:nth-child(5) {
+    color: #142e2a;
+}
+
+.corpo p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width: 901px) {
+    body {
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+    .img-m {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .corpo {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+    
+    body {
+        background-color: #57978fd5;
+        align-content: space-between;
+        grid-template-areas: 'cabecalho' 'corpo' 'rodape';
+    }
+
+    .img-d {
+        display: none;
+    }
+
+    .dep {
+        background-color: #57978f00;
+        margin: .8vw;
+        border-radius: 0;
+        text-align: center;
+        padding: 2vw;
+        transition: all 0.4s linear;
+    }
+
+    .dep img {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .fala {
+        font-size: 20px;
+    }
+
+    .autor {
+        font-size: 24px;
+    }
+
+    .fala::before {
+        line-height: 0.7;
+        height: 2em;
+    }
+}
